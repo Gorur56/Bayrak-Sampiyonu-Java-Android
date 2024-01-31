@@ -10,13 +10,18 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:text="BAYRAK ŞAMPİYONU OLMAYA HAZIR MISINIZ ?"
+=======
+        android:text="BAYRAK ŞAMPİYONUNA HOŞGELDİNİZ"
+>>>>>>> 1e9abd4e5b37380644b34cac1cf8be88b3805d0c
         android:textAlignment="center"
         android:textColor="#8E8A8A"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+<<<<<<< HEAD
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -35,5 +40,11 @@
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+=======
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.283" />
+>>>>>>> 1e9abd4e5b37380644b34cac1cf8be88b3805d0c
 
 </androidx.constraintlayout.widget.ConstraintLayout>
