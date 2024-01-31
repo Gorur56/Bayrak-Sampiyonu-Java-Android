@@ -14,6 +14,7 @@
         android:layout_marginTop="250dp"
         android:layout_marginEnd="50dp"
         android:text="BAYRAK ŞAMPİYONU OLMAYA HAZIR MISINIZ ?"
+
         android:textAlignment="center"
         android:textColor="#9A8989"
         android:textSize="34sp"
@@ -38,5 +39,4 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
