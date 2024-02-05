@@ -1,4 +1,4 @@
-package com.info.bayrakquiz;
+package com.firstapp.bayraksampiyonu;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
