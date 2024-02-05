@@ -10,37 +10,57 @@
         android:id="@+id/textViewDogru"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginStart="56dp"
         android:layout_marginTop="33dp"
+=======
+>>>>>>> cef995e8d1b3eab82d5a0ac7c8aa82bffb199dd9
         android:text="Doğru: 1"
         android:textColor="#9C9999"
         android:textSize="18sp"
         android:textStyle="bold"
+<<<<<<< HEAD
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+=======
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="95dp" />
+>>>>>>> cef995e8d1b3eab82d5a0ac7c8aa82bffb199dd9
 
     <TextView
         android:id="@+id/textViewYanlis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginTop="33dp"
         android:layout_marginEnd="56dp"
+=======
+>>>>>>> cef995e8d1b3eab82d5a0ac7c8aa82bffb199dd9
         android:text="Yanlış: 1"
         android:textColor="#9C9292"
         android:textSize="18sp"
         android:textStyle="bold"
+<<<<<<< HEAD
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+=======
+        tools:layout_editor_absoluteX="248dp"
+        tools:layout_editor_absoluteY="95dp" />
+>>>>>>> cef995e8d1b3eab82d5a0ac7c8aa82bffb199dd9
 
     <TextView
         android:id="@+id/textViewSoruSayi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginTop="76dp"
+=======
+>>>>>>> cef995e8d1b3eab82d5a0ac7c8aa82bffb199dd9
         android:text="1. Soru"
         android:textColor="#AFA4A4"
         android:textSize="30sp"
         android:textStyle="bold"
+<<<<<<< HEAD
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -106,5 +126,9 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonC" />
+=======
+        tools:layout_editor_absoluteX="136dp"
+        tools:layout_editor_absoluteY="160dp" />
+>>>>>>> cef995e8d1b3eab82d5a0ac7c8aa82bffb199dd9
 
 </androidx.constraintlayout.widget.ConstraintLayout>
