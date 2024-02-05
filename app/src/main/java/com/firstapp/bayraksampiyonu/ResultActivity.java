@@ -22,7 +22,7 @@ public class ResultActivity extends AppCompatActivity {
         buttonTekrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ResultActivity.this, QuizActivity.class));
+                startActivity(new Intent(ResultActivity.this,QuizActivity.class));
                 finish(); // backstack 'ten siliyorum. Bir adım gitmeyip ana sayfaya dönecektir.
             }
         });

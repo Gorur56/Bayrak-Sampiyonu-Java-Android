@@ -34,7 +34,7 @@ public class QuizActivity extends AppCompatActivity {
         buttonA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent( QuizActivity.this, ResultActivity.class));
+                startActivity(new Intent( QuizActivity.this,ResultActivity.class));
                 finish(); // backstack 'ten siliyorum. Bir adım gitmeyip ana sayfaya dönecektir.
             }
         });
