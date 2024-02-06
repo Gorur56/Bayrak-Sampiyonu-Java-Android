@@ -23,7 +23,7 @@ public class QuizActivity extends AppCompatActivity {
     private Veritabani vt;
 
     //Sayaçlar
-    private int soruSayaç = 0;
+    private int soruSayac = 0;
     private int yanlisSayac = 0;
     private int dogruSayac = 0;
 
@@ -31,7 +31,7 @@ public class QuizActivity extends AppCompatActivity {
     //Soru seçeneklerini karıştırmak
     private HashSet<Bayraklar> seceneklerKaristirmaListe = new HashSet<>();
     //HAshset 'te index numarası alamdığımız için Arrayliste akrataracağız.
-    private ArrayList<Bayraklar> secenekler = new ArrayList<>();
+    private ArrayList<Bayraklar> seceneklerListesi = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,33 +53,113 @@ public class QuizActivity extends AppCompatActivity {
         vt = new Veritabani(this);
         sorularListe = new BayraklarDao().rasgele20Getir(vt); //Soru listemiz yüklensin.
 
+        soruYukle();
+
         buttonA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent( QuizActivity.this,ResultActivity.class));
-                finish(); // backstack 'ten siliyorum. Bir adım gitmeyip ana sayfaya dönecektir.
+                dogruKontrol(buttonA); //İlk önce doğru kontrolü yapıyoruz
+                sayacKontrol();
             }
         });
 
         buttonB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                dogruKontrol(buttonB);
+                sayacKontrol();
             }
         });
 
         buttonC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                dogruKontrol(buttonC);
+                sayacKontrol();
             }
         });
 
         buttonD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                dogruKontrol(buttonD);
+                sayacKontrol();
             }
         });
+    }
+
+    public void soruYukle(){
+        textViewSoruSayi.setText((soruSayac+1)+".SORU"); //Soru değiştikçe soru sayısı artar.
+
+        //Doğru sayacı ve Yanlış sayacı ayarla
+        textViewDogru.setText("Doğru: "+dogruSayac);
+        textViewYanlis.setText("Yanlış: "+yanlisSayac);
+
+        dogruSoru = sorularListe.get(soruSayac);
+
+        //Doğrulanmış seçenekleri ayıklıyoruz.
+        yanlisSeceneklerListe = new BayraklarDao().rasgele3YanlisSecenekGetir(vt,dogruSoru.getBayrak_id());
+
+        //Bayrağı değiştirelim. R.id üzerinden değil dinamik bir şekilde erişiyoruz.
+        imageViewBayrak.setImageResource(getResources().getIdentifier(dogruSoru.getBayrak_resim(), "drawable", getPackageName()));
+
+        //Seçenekleri oluşturmadan temizleyelim.
+        seceneklerKaristirmaListe.clear();
+
+        //Önce doğru soruyu ekleyelim.
+        seceneklerKaristirmaListe.add(dogruSoru);
+        seceneklerKaristirmaListe.add(yanlisSeceneklerListe.get(0));
+        seceneklerKaristirmaListe.add(yanlisSeceneklerListe.get(1));
+        seceneklerKaristirmaListe.add(yanlisSeceneklerListe.get(2));
+
+        seceneklerListesi.clear();
+
+        for (Bayraklar b:seceneklerKaristirmaListe) {
+            seceneklerListesi.add(b);
+        }
+
+        //Karıştırılan seçeneler tek tek eklenir
+        buttonA.setText(seceneklerListesi.get(0).getBayrak_ad());
+        buttonB.setText(seceneklerListesi.get(1).getBayrak_ad());
+        buttonC.setText(seceneklerListesi.get(2).getBayrak_ad());
+        buttonD.setText(seceneklerListesi.get(3).getBayrak_ad());
+
+    }
+
+    public void dogruKontrol(Button button){
+        String buttonYazi = button.getText().toString();
+        String dogruCevap = dogruSoru.getBayrak_ad();
+
+        if(buttonYazi.equals(dogruCevap))
+        {
+            dogruSayac++;
+            //Doğru cevap verildi
+        }
+        else
+        {
+            yanlisSayac++;
+            //Yanlış cevap verildi.
+        }
+
+        textViewDogru.setText("Doğru: "+dogruSayac);
+        textViewYanlis.setText("Yanlış: "+yanlisSayac);
+    }
+
+    public void sayacKontrol()
+    {
+        soruSayac++;
+
+        if (soruSayac != 20 )
+        {
+            soruYukle();
+        }
+        else
+        {
+            //Öbür tarafa doğru sayacı göndereceğiz.
+            Intent intent = new Intent( QuizActivity.this,ResultActivity.class);
+            intent.putExtra("dogruSayac",dogruSayac);
+            startActivity(intent);
+            finish(); // backstack 'ten siliyorum. Bir adım gitmeyip ana sayfaya dönecektir.
+        }
     }
 }

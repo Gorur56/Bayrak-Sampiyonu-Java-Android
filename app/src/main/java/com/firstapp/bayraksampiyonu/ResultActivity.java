@@ -11,6 +11,8 @@ import android.widget.TextView;
 public class ResultActivity extends AppCompatActivity {
     private TextView textViewSonuc, textViewYuzdeSonuc;
     private Button buttonTekrar;
+
+    private int dogruSayac;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +20,12 @@ public class ResultActivity extends AppCompatActivity {
 
         textViewSonuc = findViewById(R.id.textViewSonuc);
         textViewYuzdeSonuc = findViewById(R.id.textViewYuzdeSonuc);
+        buttonTekrar = findViewById(R.id.buttonTekrar);
+
+        dogruSayac = getIntent().getIntExtra("dogruSayac",0);
+
+        textViewSonuc.setText(dogruSayac+" DOĞRU "+(20-dogruSayac)+" YANLIŞ");
+        textViewYuzdeSonuc.setText("% "+(dogruSayac*100)/20+" Başarı");
 
         buttonTekrar.setOnClickListener(new View.OnClickListener() {
             @Override
