@@ -19,7 +19,11 @@ public class MainActivity extends AppCompatActivity {
 
         buttonBasla = findViewById(R.id.buttonBasla);
 
-        veritabaniKopyala(); // İlk açıldığında bir kere veritabanını kopyalayacak.
+        try {
+            veritabaniKopyala(); // İlk açıldığında bir kere veritabanını kopyalayacak.
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         buttonBasla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
