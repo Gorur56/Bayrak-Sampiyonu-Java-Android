@@ -36,6 +36,7 @@
         android:layout_marginBottom="54dp"
         android:text="BAŞLA"
         android:textSize="20sp"
+        app:backgroundTint="@color/yeni_icon_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
