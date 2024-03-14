@@ -7,11 +7,11 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.firstapp.bayraksampiyonu"
+        applicationId = "com.firstapppp.bayraksampiyonu"
         minSdk = 19
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 4
+        versionName = "1.3"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
