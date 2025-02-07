@@ -8,10 +8,10 @@ android {
 
     defaultConfig {
         applicationId = "com.firstapppp.bayraksampiyonu"
-        minSdk = 19
+        minSdk = 21
         targetSdk = 34
         versionCode = 4
-        versionName = "1.3"
+        versionName = "1.4"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
